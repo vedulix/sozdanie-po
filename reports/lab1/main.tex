@@ -139,6 +139,14 @@ private void OnOperator(object? sender, RoutedEventArgs e)
 
 Реализованы пользовательские контролы на Avalonia: \texttt{NumericTextBox} (фильтрация ввода через \texttt{OnTextInput}), \texttt{ColorPicker} (слайдеры R/G/B с превью цвета через \texttt{Slider} и \texttt{Border}), \texttt{HighlightButton} (смена фона при наведении через \texttt{OnPointerEntered}/\texttt{OnPointerExited}). Диалоговые окна реализованы как отдельные \texttt{Window}: модальное -- \texttt{await dialog.ShowDialog<bool>(this)}, немодальное -- \texttt{findDialog.Show(this)}.
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.45\textwidth]{../../reports/screenshots/SCR-20260328-qdfe.png}
+\hfill
+\includegraphics[width=0.45\textwidth]{../../reports/screenshots/SCR-20260328-qdgn.png}
+\caption{Диалоги: стандартные (слева) и немодальный поиск (справа)}
+\end{figure}
+
 \begin{lstlisting}[caption={Модальное и немодальное окно},language={[Sharp]C}]
 // Модальное окно -- блокирует родительское
 var dialog = new SettingsDialog();
@@ -187,6 +195,14 @@ public static string CalcFactorial()
 \section{ЛР 6. Графика}
 
 Реализовано приложение с тремя вкладками: построение графика функции, диаграмма и анимация. Для отрисовки используется \texttt{DrawingContext} в переопределённом методе \texttt{Render()} пользовательских контролов. График синусоиды строится через \texttt{StreamGeometry}, диаграмма -- через \texttt{DrawRectangle}, анимация прыгающего мяча работает на \texttt{DispatcherTimer} с вызовом \texttt{InvalidateVisual()}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.45\textwidth]{../../reports/screenshots/SCR-20260328-qdef.png}
+\hfill
+\includegraphics[width=0.45\textwidth]{../../reports/screenshots/SCR-20260328-qder.png}
+\caption{График синусоиды (слева) и столбчатая диаграмма (справа)}
+\end{figure}
 
 \begin{lstlisting}[caption={Отрисовка графика в Avalonia},language={[Sharp]C}]
 public override void Render(DrawingContext context)
