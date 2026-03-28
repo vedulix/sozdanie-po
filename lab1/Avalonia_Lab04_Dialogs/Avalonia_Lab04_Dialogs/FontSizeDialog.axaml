@@ -1,0 +1,23 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="Avalonia_Lab04_Dialogs.FontSizeDialog"
+        Title="Размер шрифта"
+        Width="280" Height="160"
+        CanResize="False"
+        WindowStartupLocation="CenterOwner"
+        ShowInTaskbar="False">
+
+    <!-- Модальный диалог выбора размера шрифта (упрощённый аналог FontDialog).
+         В Avalonia нет встроенного FontDialog, поэтому делаем свой. -->
+    <StackPanel Margin="15" Spacing="12">
+        <DockPanel>
+            <TextBlock Text="Размер шрифта:" VerticalAlignment="Center" Margin="0,0,10,0" />
+            <NumericUpDown Name="NudFontSize" Minimum="8" Maximum="72" Value="14" FormatString="0" />
+        </DockPanel>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="8">
+            <Button Name="BtnOk" Content="OK" Width="80" />
+            <Button Name="BtnCancel" Content="Отмена" Width="80" />
+        </StackPanel>
+    </StackPanel>
+</Window>

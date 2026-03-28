@@ -1,0 +1,24 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="Avalonia_Lab01_Forms.RoundWindow"
+        Title="Круглая форма"
+        Width="300" Height="300"
+        WindowStartupLocation="CenterScreen"
+        SystemDecorations="None"
+        Background="MediumSlateBlue"
+        CornerRadius="150"
+        KeyDown="OnKeyDown">
+
+    <!-- Упражнение 2: Непрямоугольная (круглая) форма.
+         В Avalonia используем CornerRadius + клип для скругления. -->
+
+    <Border CornerRadius="150" ClipToBounds="True"
+            Background="MediumSlateBlue"
+            Width="300" Height="300">
+        <TextBlock Text="Круглая форма!&#x0a;Нажмите Esc для закрытия."
+                   Foreground="White" FontSize="14"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   TextAlignment="Center" />
+    </Border>
+</Window>

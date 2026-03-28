@@ -1,0 +1,97 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="Avalonia_Lab04_Dialogs.MainWindow"
+        Title="ЛР 4 — Использование окон диалога (Avalonia)"
+        Width="750" Height="550"
+        WindowStartupLocation="CenterScreen">
+
+    <!-- Главное окно с вкладками, аналог WinForms TabControl -->
+    <TabControl Name="Tabs">
+
+        <!-- Вкладка 1: Стандартные диалоги (Упражнение 1) -->
+        <TabItem Header="Стандартные диалоги">
+            <StackPanel Margin="15" Spacing="10">
+                <!-- Путь к открытому файлу -->
+                <TextBox Name="TxtPath" IsReadOnly="True" Watermark="Путь к файлу..." />
+
+                <!-- Кнопки для работы с файлами и оформлением -->
+                <WrapPanel>
+                    <Button Name="BtnOpen" Content="Открыть файл" Margin="0,0,8,0" />
+                    <Button Name="BtnSave" Content="Сохранить" Margin="0,0,8,0" />
+                    <Button Name="BtnColor" Content="Цвет фона" Margin="0,0,8,0" />
+                    <Button Name="BtnFontSize" Content="Размер шрифта" Margin="0,0,8,0" />
+                </WrapPanel>
+
+                <!-- Текстовый редактор -->
+                <TextBox Name="RichBox"
+                         AcceptsReturn="True"
+                         TextWrapping="Wrap"
+                         Height="300"
+                         Watermark="Содержимое файла..." />
+            </StackPanel>
+        </TabItem>
+
+        <!-- Вкладка 2: Пользовательский модальный диалог настроек (Упражнение 2) -->
+        <TabItem Header="Настройки">
+            <StackPanel Margin="15" Spacing="10">
+                <TextBlock Name="LblCurrent" Text="Пользователь: Пользователь, тема: Light" />
+                <!-- Кнопка открывает модальный диалог (ShowDialog) -->
+                <Button Name="BtnSettings" Content="Открыть настройки" />
+            </StackPanel>
+        </TabItem>
+
+        <!-- Вкладка 3: Редактирование Person (Упражнение 3) -->
+        <TabItem Header="Person">
+            <StackPanel Margin="15" Spacing="10">
+                <TextBlock Name="LblPerson" Text="Иван, возраст: 20" />
+                <!-- Кнопка открывает модальный диалог редактирования -->
+                <Button Name="BtnEditPerson" Content="Редактировать Person" />
+            </StackPanel>
+        </TabItem>
+
+        <!-- Вкладка 4: Немодальный поиск (Упражнение 4) -->
+        <TabItem Header="Поиск">
+            <StackPanel Margin="15" Spacing="10">
+                <!-- Кнопка открывает немодальный диалог (Show) -->
+                <Button Name="BtnFind" Content="Открыть поиск" />
+                <TextBox Name="SearchRichBox"
+                         AcceptsReturn="True"
+                         TextWrapping="Wrap"
+                         Height="350"
+                         Text="Пример текста для поиска.&#xA;Введите текст и нажмите «Поиск».&#xA;Совпадения будут подсвечены жёлтым цветом.&#xA;Этот текстовый редактор демонстрирует немодальный диалог поиска." />
+            </StackPanel>
+        </TabItem>
+
+        <!-- Вкладка 5: Калькулятор функций (Упражнение 5) -->
+        <TabItem Header="Калькулятор">
+            <StackPanel Margin="15" Spacing="10">
+                <!-- Ввод параметров a, b, x -->
+                <WrapPanel>
+                    <TextBlock Text="a =" VerticalAlignment="Center" Margin="0,0,5,0" />
+                    <TextBox Name="TxtA" Width="80" Text="1" Margin="0,0,15,0" />
+                    <TextBlock Text="b =" VerticalAlignment="Center" Margin="0,0,5,0" />
+                    <TextBox Name="TxtB" Width="80" Text="0" Margin="0,0,15,0" />
+                    <TextBlock Text="x =" VerticalAlignment="Center" Margin="0,0,5,0" />
+                    <TextBox Name="TxtX" Width="80" Text="1" />
+                </WrapPanel>
+
+                <!-- Выбор функции -->
+                <WrapPanel>
+                    <TextBlock Text="Функция:" VerticalAlignment="Center" Margin="0,0,10,0" />
+                    <ComboBox Name="CmbFunc" Width="160" SelectedIndex="0">
+                        <ComboBoxItem Content="sin(ax+b)" />
+                        <ComboBoxItem Content="cos(ax+b)" />
+                        <ComboBoxItem Content="exp(ax+b)" />
+                        <ComboBoxItem Content="ln(ax+b)" />
+                    </ComboBox>
+                </WrapPanel>
+
+                <Button Name="BtnCalc" Content="Вычислить" />
+
+                <!-- Результат вычисления -->
+                <TextBlock Name="LblResult" FontSize="18" FontWeight="Bold" />
+            </StackPanel>
+        </TabItem>
+
+    </TabControl>
+</Window>

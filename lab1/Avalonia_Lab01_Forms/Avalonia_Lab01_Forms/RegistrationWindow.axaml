@@ -1,0 +1,52 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="Avalonia_Lab01_Forms.RegistrationWindow"
+        Title="Форма регистрации"
+        Width="400" Height="350"
+        WindowStartupLocation="CenterScreen"
+        Background="WhiteSmoke">
+
+    <!-- Упражнение 5 (контрольное): Форма регистрации.
+         Содержит поля ввода, выпадающий список, чекбокс и кнопку отправки. -->
+    <Grid Margin="20" RowDefinitions="Auto,Auto,Auto,Auto,Auto,*"
+          ColumnDefinitions="100,*">
+
+        <!-- Имя -->
+        <TextBlock Grid.Row="0" Grid.Column="0"
+                   Text="Имя:" VerticalAlignment="Center" />
+        <TextBox Grid.Row="0" Grid.Column="1"
+                 x:Name="TxtName" Margin="0,0,0,10" />
+
+        <!-- Email -->
+        <TextBlock Grid.Row="1" Grid.Column="0"
+                   Text="Email:" VerticalAlignment="Center" />
+        <TextBox Grid.Row="1" Grid.Column="1"
+                 x:Name="TxtEmail" Margin="0,0,0,10" />
+
+        <!-- Роль -->
+        <TextBlock Grid.Row="2" Grid.Column="0"
+                   Text="Роль:" VerticalAlignment="Center" />
+        <ComboBox Grid.Row="2" Grid.Column="1"
+                  x:Name="CmbRole" Margin="0,0,0,10"
+                  SelectedIndex="0" HorizontalAlignment="Stretch">
+            <ComboBoxItem Content="Студент" />
+            <ComboBoxItem Content="Преподаватель" />
+            <ComboBoxItem Content="Администратор" />
+        </ComboBox>
+
+        <!-- Согласие -->
+        <CheckBox Grid.Row="3" Grid.Column="1"
+                  x:Name="ChkAgree"
+                  Content="Я согласен с условиями"
+                  Margin="0,0,0,10" />
+
+        <!-- Кнопка отправки -->
+        <Button Grid.Row="4" Grid.Column="1"
+                Content="Отправить"
+                Width="120" Height="35"
+                HorizontalAlignment="Left"
+                Background="SteelBlue" Foreground="White"
+                HorizontalContentAlignment="Center"
+                Click="OnSubmitClick" />
+    </Grid>
+</Window>

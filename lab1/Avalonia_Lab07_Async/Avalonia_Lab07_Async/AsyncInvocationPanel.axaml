@@ -1,0 +1,17 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="Avalonia_Lab07_Async.AsyncInvocationPanel">
+
+    <!-- Упр.3: Имитация асинхронной загрузки файла с прогрессом -->
+    <StackPanel Margin="20" Spacing="10">
+        <TextBlock TextWrapping="Wrap"
+                   Text="Имитация асинхронной загрузки файла.&#x0a;Используется IProgress&lt;T&gt; для обновления прогресса." />
+
+        <ProgressBar x:Name="ProgressBar" Minimum="0" Maximum="100" Height="25" Width="400"
+                     HorizontalAlignment="Left" />
+
+        <TextBlock x:Name="StatusLabel" Text="Нажмите «Загрузить» для начала" />
+
+        <Button x:Name="StartBtn" Content="Загрузить файл" Width="150" />
+    </StackPanel>
+</UserControl>

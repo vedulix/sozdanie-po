@@ -1,0 +1,20 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="Avalonia_Lab07_Async.BackgroundWorkerPanel">
+
+    <!-- Упр.1: Имитация длительной операции с прогрессом и отменой -->
+    <StackPanel Margin="20" Spacing="10">
+        <TextBlock TextWrapping="Wrap"
+                   Text="BackgroundWorker выполняет длительную операцию в фоновом потоке.&#x0a;ProgressBar обновляется через ReportProgress." />
+
+        <ProgressBar x:Name="ProgressBar" Minimum="0" Maximum="100" Height="25" Width="400"
+                     HorizontalAlignment="Left" />
+
+        <TextBlock x:Name="StatusLabel" Text="Готово к запуску" />
+
+        <StackPanel Orientation="Horizontal" Spacing="10">
+            <Button x:Name="StartBtn" Content="Старт" Width="100" />
+            <Button x:Name="CancelBtn" Content="Отмена" Width="100" IsEnabled="False" />
+        </StackPanel>
+    </StackPanel>
+</UserControl>

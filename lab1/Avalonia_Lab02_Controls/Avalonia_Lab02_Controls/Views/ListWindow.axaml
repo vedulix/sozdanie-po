@@ -1,0 +1,22 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="Avalonia_Lab02_Controls.Views.ListWindow"
+        Title="Работа со списками"
+        Width="400" Height="350"
+        WindowStartupLocation="CenterScreen">
+    <!-- Упражнение 2: Работа со списком — добавление и удаление элементов -->
+    <Grid Margin="20" ColumnDefinitions="200,20,*" RowDefinitions="*">
+        <ListBox x:Name="ListItems" Grid.Column="0">
+            <ListBoxItem Content="Элемент 1"/>
+            <ListBoxItem Content="Элемент 2"/>
+            <ListBoxItem Content="Элемент 3"/>
+            <ListBoxItem Content="Элемент 4"/>
+        </ListBox>
+
+        <StackPanel Grid.Column="2" Spacing="10">
+            <TextBox x:Name="TxtInput" Watermark="Новый элемент"/>
+            <Button Content="Добавить" Click="OnAdd" Width="130"/>
+            <Button Content="Удалить" Click="OnRemove" Width="130"/>
+        </StackPanel>
+    </Grid>
+</Window>

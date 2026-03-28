@@ -1,0 +1,37 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="Avalonia_Lab02_Controls.MainWindow"
+        Title="Лаб 2 - Элементы управления"
+        Width="460" Height="480"
+        WindowStartupLocation="CenterScreen"
+        Background="#F0F8FF">
+    <!-- Главное окно с кнопками для открытия упражнений -->
+    <StackPanel Margin="20" HorizontalAlignment="Center">
+        <TextBlock Text="Работа с элементами управления"
+                   FontSize="20" FontWeight="Bold"
+                   HorizontalAlignment="Center"
+                   Margin="0,0,0,20"/>
+
+        <Button Content="Упр. 1: Click и MouseMove"
+                Width="350" Height="38" Margin="0,5"
+                Click="OpenClickMove"/>
+        <Button Content="Упр. 2: Работа со списками"
+                Width="350" Height="38" Margin="0,5"
+                Click="OpenList"/>
+        <Button Content="Упр. 3: ToolStrip (панель инструментов)"
+                Width="350" Height="38" Margin="0,5"
+                Click="OpenToolStrip"/>
+        <Button Content="Упр. 4: StatusBar + Timer"
+                Width="350" Height="38" Margin="0,5"
+                Click="OpenStatusStrip"/>
+        <Button Content="Упр. 6: Ввод/вывод данных"
+                Width="350" Height="38" Margin="0,5"
+                Click="OpenIo"/>
+        <Button Content="Упр. 8: Валидация ввода"
+                Width="350" Height="38" Margin="0,5"
+                Click="OpenValidation"/>
+        <Button Content="Упр. 9: Адресная книга (DataGrid)"
+                Width="350" Height="38" Margin="0,5"
+                Click="OpenAddressBook"/>
+    </StackPanel>
+</Window>

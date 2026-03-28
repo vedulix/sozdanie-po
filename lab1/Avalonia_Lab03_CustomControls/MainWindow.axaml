@@ -1,0 +1,81 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="clr-namespace:Avalonia_Lab03_CustomControls.Controls"
+        x:Class="Avalonia_Lab03_CustomControls.MainWindow"
+        Title="ЛР 3 — Создание элементов управления"
+        Width="700" Height="550">
+
+  <!-- Главное окно с тремя вкладками, демонстрирующими пользовательские элементы -->
+  <TabControl Margin="5">
+
+    <!-- ══ Вкладка 1: ColorPicker (Упражнение 1) ══ -->
+    <TabItem Header="ColorPicker">
+      <StackPanel Margin="20" Spacing="10">
+        <controls:ColorPicker x:Name="MyColorPicker"/>
+        <TextBlock x:Name="LblColorInfo" Text="Перемещайте ползунки для выбора цвета"/>
+      </StackPanel>
+    </TabItem>
+
+    <!-- ══ Вкладка 2: HighlightButton (Упражнение 3) ══ -->
+    <TabItem Header="HighlightButton">
+      <StackPanel Margin="20" Spacing="10">
+        <TextBlock Text="Наведите курсор на кнопки — они подсвечиваются:"/>
+        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Left">
+          <controls:HighlightButton Content="Кнопка 1" Width="120" Height="40" Margin="5"
+              HighlightBrush="LightCoral"/>
+          <controls:HighlightButton Content="Кнопка 2" Width="120" Height="40" Margin="5"
+              HighlightBrush="LightGreen"/>
+          <controls:HighlightButton Content="Кнопка 3" Width="120" Height="40" Margin="5"
+              HighlightBrush="LightSkyBlue"/>
+          <controls:HighlightButton Content="Кнопка 4" Width="120" Height="40" Margin="5"
+              HighlightBrush="Khaki"/>
+        </WrapPanel>
+      </StackPanel>
+    </TabItem>
+
+    <!-- ══ Вкладка 3: Форма валидации данных (Упражнение 4) ══ -->
+    <TabItem Header="Валидация">
+      <StackPanel Margin="20" Spacing="8">
+
+        <!-- Поле: Имя -->
+        <StackPanel Orientation="Horizontal" Spacing="10">
+          <TextBlock Text="Имя:" Width="80" VerticalAlignment="Center"/>
+          <TextBox x:Name="TxtName" Width="200"/>
+          <TextBlock x:Name="ErrName" Foreground="Red" VerticalAlignment="Center"/>
+        </StackPanel>
+
+        <!-- Поле: Email -->
+        <StackPanel Orientation="Horizontal" Spacing="10">
+          <TextBlock Text="Email:" Width="80" VerticalAlignment="Center"/>
+          <TextBox x:Name="TxtEmail" Width="200"/>
+          <TextBlock x:Name="ErrEmail" Foreground="Red" VerticalAlignment="Center"/>
+        </StackPanel>
+
+        <!-- Поле: Телефон -->
+        <StackPanel Orientation="Horizontal" Spacing="10">
+          <TextBlock Text="Телефон:" Width="80" VerticalAlignment="Center"/>
+          <TextBox x:Name="TxtPhone" Width="200"/>
+          <TextBlock x:Name="ErrPhone" Foreground="Red" VerticalAlignment="Center"/>
+        </StackPanel>
+
+        <!-- Поле: Возраст (NumericTextBox — только цифры) -->
+        <StackPanel Orientation="Horizontal" Spacing="10">
+          <TextBlock Text="Возраст:" Width="80" VerticalAlignment="Center"/>
+          <controls:NumericTextBox x:Name="TxtAge" Width="200"/>
+          <TextBlock x:Name="ErrAge" Foreground="Red" VerticalAlignment="Center"/>
+        </StackPanel>
+
+        <!-- Кнопка проверки с подсветкой -->
+        <controls:HighlightButton x:Name="BtnValidate" Content="Проверить"
+            Width="120" Height="30" HorizontalAlignment="Left" Margin="80,5,0,0"
+            HighlightBrush="LightGreen"/>
+
+        <!-- Результат валидации -->
+        <TextBlock x:Name="LblResult" Foreground="DarkGreen" Margin="80,0,0,0"
+                   TextWrapping="Wrap"/>
+
+      </StackPanel>
+    </TabItem>
+
+  </TabControl>
+</Window>

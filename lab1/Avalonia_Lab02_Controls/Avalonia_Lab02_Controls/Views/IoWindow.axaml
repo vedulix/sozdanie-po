@@ -1,0 +1,26 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="Avalonia_Lab02_Controls.Views.IoWindow"
+        Title="Ввод/вывод данных"
+        Width="400" Height="280"
+        WindowStartupLocation="CenterScreen">
+    <!-- Упражнение 6: Простой ввод/вывод данных — имя и возраст -->
+    <StackPanel Margin="20" Spacing="10">
+        <Grid ColumnDefinitions="80,*" RowDefinitions="Auto,Auto" RowSpacing="10">
+            <TextBlock Text="Имя:" VerticalAlignment="Center"/>
+            <TextBox x:Name="TxtName" Grid.Column="1"/>
+
+            <TextBlock Text="Возраст:" Grid.Row="1" VerticalAlignment="Center"/>
+            <TextBox x:Name="TxtAge" Grid.Row="1" Grid.Column="1"/>
+        </Grid>
+
+        <Button Content="Показать" Width="120" Click="OnShow"
+                HorizontalAlignment="Left" Margin="80,5,0,0"/>
+
+        <TextBlock x:Name="LblResult"
+                   FontSize="14" FontWeight="Bold"
+                   Foreground="DarkBlue"
+                   Margin="0,10,0,0"
+                   TextWrapping="Wrap"/>
+    </StackPanel>
+</Window>

@@ -1,0 +1,28 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="Avalonia_Lab04_Dialogs.SettingsDialog"
+        Title="Настройки"
+        Width="350" Height="200"
+        CanResize="False"
+        WindowStartupLocation="CenterOwner"
+        ShowInTaskbar="False">
+
+    <!-- Упражнение 2: Модальный диалог настроек (аналог WinForms SettingsDialog) -->
+    <StackPanel Margin="15" Spacing="12">
+        <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto" RowSpacing="10" ColumnSpacing="10">
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="Имя пользователя:" VerticalAlignment="Center" />
+            <TextBox Grid.Row="0" Grid.Column="1" Name="TxtUsername" />
+
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="Тема:" VerticalAlignment="Center" />
+            <ComboBox Grid.Row="1" Grid.Column="1" Name="CmbTheme" HorizontalAlignment="Stretch">
+                <ComboBoxItem Content="Light" />
+                <ComboBoxItem Content="Dark" />
+            </ComboBox>
+        </Grid>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="8" Margin="0,10,0,0">
+            <Button Name="BtnOk" Content="OK" Width="80" />
+            <Button Name="BtnCancel" Content="Отмена" Width="80" />
+        </StackPanel>
+    </StackPanel>
+</Window>

@@ -1,0 +1,18 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="Avalonia_Lab07_Async.AsyncAwaitPanel">
+
+    <!-- Упр.4: async/await — имитация загрузки данных с сервера -->
+    <StackPanel Margin="20" Spacing="10">
+        <TextBlock TextWrapping="Wrap"
+                   Text="Демонстрация async/await.&#x0a;Метод LoadDataAsync имитирует загрузку данных с сервера.&#x0a;UI остаётся отзывчивым во время ожидания." />
+
+        <Button x:Name="LoadBtn" Content="Загрузить данные" Width="180" />
+
+        <TextBlock x:Name="StatusLabel" Text="" />
+
+        <TextBox x:Name="DataBox" IsReadOnly="True" Width="500" Height="200"
+                 AcceptsReturn="True" HorizontalAlignment="Left"
+                 TextWrapping="Wrap" />
+    </StackPanel>
+</UserControl>

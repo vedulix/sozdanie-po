@@ -1,0 +1,24 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="Avalonia_Lab02_Controls.Views.ValidationWindow"
+        Title="Валидация ввода"
+        Width="420" Height="250"
+        WindowStartupLocation="CenterScreen">
+    <!-- Упражнение 8: Валидация — только цифры, показ ошибки при пустом поле -->
+    <StackPanel Margin="20" Spacing="15">
+        <StackPanel Orientation="Horizontal" Spacing="10">
+            <TextBlock Text="Введите число:" FontSize="14"
+                       VerticalAlignment="Center"/>
+            <TextBox x:Name="TxtNumber" Width="200" FontSize="14"
+                     KeyDown="OnKeyDown"/>
+        </StackPanel>
+
+        <!-- Текст ошибки (аналог ErrorProvider) -->
+        <TextBlock x:Name="LblError" Foreground="Red" FontSize="12"/>
+
+        <Button Content="Проверить" Width="130" Click="OnCheck"/>
+
+        <TextBlock Text="Допускаются только цифры. При пустом поле — ошибка."
+                   Foreground="Gray"/>
+    </StackPanel>
+</Window>

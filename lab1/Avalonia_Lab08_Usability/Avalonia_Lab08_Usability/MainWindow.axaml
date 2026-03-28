@@ -1,0 +1,27 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:Avalonia_Lab08_Usability"
+        x:Class="Avalonia_Lab08_Usability.MainWindow"
+        x:DataType="local:MainWindow"
+        Title="ЛР 8 — Повышение удобства использования"
+        Width="900" Height="650"
+        WindowStartupLocation="CenterScreen">
+
+    <!-- Горячие клавиши: Ctrl+1..5 переключают вкладки, Ctrl+Q — выход -->
+    <Window.KeyBindings>
+        <KeyBinding Gesture="Ctrl+D1" Command="{Binding SwitchTabCommand}" CommandParameter="0" />
+        <KeyBinding Gesture="Ctrl+D2" Command="{Binding SwitchTabCommand}" CommandParameter="1" />
+        <KeyBinding Gesture="Ctrl+D3" Command="{Binding SwitchTabCommand}" CommandParameter="2" />
+        <KeyBinding Gesture="Ctrl+D4" Command="{Binding SwitchTabCommand}" CommandParameter="3" />
+        <KeyBinding Gesture="Ctrl+D5" Command="{Binding SwitchTabCommand}" CommandParameter="4" />
+        <KeyBinding Gesture="Ctrl+Q" Command="{Binding QuitCommand}" />
+    </Window.KeyBindings>
+
+    <TabControl x:Name="TabControl">
+        <TabItem Header="Упр.1: Сериализация" />
+        <TabItem Header="Упр.2: Контекстная справка" />
+        <TabItem Header="Упр.4: Подсказки (ToolTip)" />
+        <TabItem Header="Упр.5: Определение языка" />
+        <TabItem Header="Упр.6: Локализация" />
+    </TabControl>
+</Window>

@@ -1,0 +1,20 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="Avalonia_Lab04_Dialogs.ColorPickerDialog"
+        Title="Выбор цвета"
+        Width="320" Height="420"
+        CanResize="False"
+        WindowStartupLocation="CenterOwner"
+        ShowInTaskbar="False">
+
+    <!-- Модальный диалог выбора цвета (аналог WinForms ColorDialog).
+         Использует Avalonia ColorPicker. -->
+    <StackPanel Margin="15" Spacing="12">
+        <ColorPicker Name="Picker" />
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="8">
+            <Button Name="BtnOk" Content="OK" Width="80" />
+            <Button Name="BtnCancel" Content="Отмена" Width="80" />
+        </StackPanel>
+    </StackPanel>
+</Window>

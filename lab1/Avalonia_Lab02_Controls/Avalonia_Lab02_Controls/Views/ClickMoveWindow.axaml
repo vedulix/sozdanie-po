@@ -1,0 +1,20 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="Avalonia_Lab02_Controls.Views.ClickMoveWindow"
+        Title="Click и MouseMove"
+        Width="420" Height="300"
+        WindowStartupLocation="CenterScreen">
+    <!-- Упражнение 1: Счётчик нажатий и координаты мыши -->
+    <StackPanel Margin="20">
+        <Button x:Name="BtnClick"
+                Content="Нажми меня!"
+                Width="200" Height="50"
+                FontSize="14"
+                HorizontalAlignment="Center"
+                Click="OnClickButton"/>
+        <TextBlock x:Name="LblCoords"
+                   Text="Координаты мыши: (-, -)"
+                   FontSize="14"
+                   Margin="0,40,0,0"/>
+    </StackPanel>
+</Window>

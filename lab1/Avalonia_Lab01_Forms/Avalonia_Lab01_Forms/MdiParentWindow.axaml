@@ -1,0 +1,24 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="Avalonia_Lab01_Forms.MdiParentWindow"
+        Title="MDI-приложение"
+        Width="600" Height="450"
+        WindowStartupLocation="CenterScreen">
+
+    <!-- Упражнение 4: MDI-контейнер.
+         Avalonia не поддерживает MDI напрямую, поэтому используем
+         TabControl для имитации дочерних окон. -->
+    <DockPanel>
+        <!-- Меню -->
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="Файл">
+                <MenuItem Header="Новое дочернее окно" Click="OnNewChild" />
+                <Separator />
+                <MenuItem Header="Выход" Click="OnExit" />
+            </MenuItem>
+        </Menu>
+
+        <!-- Вкладки для дочерних окон -->
+        <TabControl x:Name="TabChildren" />
+    </DockPanel>
+</Window>

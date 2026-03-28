@@ -1,0 +1,26 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:Avalonia_Lab07_Async"
+        x:Class="Avalonia_Lab07_Async.MainWindow"
+        Title="ЛР 7 — Асинхронное программирование (Avalonia)"
+        Width="850" Height="600">
+
+    <!-- Главное окно с вкладками, аналогично WinForms TabControl -->
+    <TabControl>
+        <TabItem Header="Упр.1: BackgroundWorker">
+            <local:BackgroundWorkerPanel />
+        </TabItem>
+        <TabItem Header="Упр.2: Делегаты">
+            <local:DelegatePanel />
+        </TabItem>
+        <TabItem Header="Упр.3: Асинхронный вызов">
+            <local:AsyncInvocationPanel />
+        </TabItem>
+        <TabItem Header="Упр.4: async/await">
+            <local:AsyncAwaitPanel />
+        </TabItem>
+        <TabItem Header="Упр.5: Фибоначчи">
+            <local:FibonacciPanel />
+        </TabItem>
+    </TabControl>
+</Window>

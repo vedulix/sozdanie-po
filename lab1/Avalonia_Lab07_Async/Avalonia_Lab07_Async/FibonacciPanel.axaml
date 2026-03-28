@@ -1,0 +1,27 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="Avalonia_Lab07_Async.FibonacciPanel">
+
+    <!-- Упр.5: Вычисление числа Фибоначчи в фоновом потоке -->
+    <StackPanel Margin="20" Spacing="10">
+        <TextBlock TextWrapping="Wrap"
+                   Text="Вычисление числа Фибоначчи в фоновом потоке.&#x0a;Введите N (порядковый номер числа), нажмите «Вычислить».&#x0a;Рекомендуемые значения: 100–10000." />
+
+        <TextBlock Text="N =" />
+        <TextBox x:Name="InputBox" Width="200" Text="1000" HorizontalAlignment="Left" />
+
+        <StackPanel Orientation="Horizontal" Spacing="10" Margin="0,5,0,0">
+            <Button x:Name="StartBtn" Content="Вычислить" Width="120" />
+            <Button x:Name="CancelBtn" Content="Отмена" Width="100" IsEnabled="False" />
+        </StackPanel>
+
+        <ProgressBar x:Name="ProgressBar" Minimum="0" Maximum="100" Height="25" Width="400"
+                     HorizontalAlignment="Left" />
+
+        <TextBlock x:Name="StatusLabel" Text="Готово" />
+
+        <TextBox x:Name="ResultBox" IsReadOnly="True" Width="500" Height="150"
+                 AcceptsReturn="True" HorizontalAlignment="Left"
+                 TextWrapping="Wrap" />
+    </StackPanel>
+</UserControl>

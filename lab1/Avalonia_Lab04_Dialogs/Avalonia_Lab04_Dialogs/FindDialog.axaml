@@ -1,0 +1,21 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="Avalonia_Lab04_Dialogs.FindDialog"
+        Title="Поиск"
+        Width="400" Height="130"
+        CanResize="False"
+        WindowStartupLocation="CenterOwner"
+        ShowInTaskbar="False"
+        Topmost="True">
+
+    <!-- Упражнение 4: НЕМОДАЛЬНЫЙ диалог поиска текста.
+         Открывается через Show (не ShowDialog) — не блокирует главное окно. -->
+    <StackPanel Margin="10" Spacing="8">
+        <DockPanel>
+            <Button Name="BtnFindNext" Content="Найти далее"
+                    DockPanel.Dock="Right" Width="110" Margin="8,0,0,0" />
+            <TextBox Name="TxtSearch" Watermark="Текст для поиска..." />
+        </DockPanel>
+        <TextBlock Name="LblStatus" FontSize="12" Foreground="Gray" />
+    </StackPanel>
+</Window>

@@ -1,0 +1,25 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="Avalonia_Lab07_Async.DelegatePanel">
+
+    <!-- Упр.2: Делегаты — выбор математической операции -->
+    <StackPanel Margin="20" Spacing="10">
+        <TextBlock TextWrapping="Wrap"
+                   Text="Демонстрация использования делегатов.&#x0a;Выберите операцию, введите число и нажмите «Вычислить»." />
+
+        <TextBlock Text="Число:" />
+        <TextBox x:Name="InputBox" Width="200" Text="5" HorizontalAlignment="Left" />
+
+        <TextBlock Text="Операция:" Margin="0,10,0,0" />
+        <ComboBox x:Name="OperationBox" Width="200" SelectedIndex="0" HorizontalAlignment="Left">
+            <ComboBoxItem Content="Квадрат (n²)" />
+            <ComboBoxItem Content="Куб (n³)" />
+            <ComboBoxItem Content="Факториал (n!)" />
+        </ComboBox>
+
+        <Button x:Name="CalcBtn" Content="Вычислить" Width="120" Margin="0,10,0,0" />
+
+        <TextBlock x:Name="ResultLabel" Text="Результат: —" FontSize="18" FontWeight="Bold"
+                   Margin="0,15,0,0" />
+    </StackPanel>
+</UserControl>

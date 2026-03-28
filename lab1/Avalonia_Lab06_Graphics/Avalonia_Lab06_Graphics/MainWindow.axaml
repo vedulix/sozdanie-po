@@ -1,0 +1,24 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:Avalonia_Lab06_Graphics"
+        x:Class="Avalonia_Lab06_Graphics.MainWindow"
+        Title="ЛР 6 — Графика и анимация"
+        Width="800" Height="600">
+
+    <TabControl>
+        <!-- Вкладка 1: График функции y = sin(x) -->
+        <TabItem Header="Упр.1: График функции">
+            <local:GraphControl />
+        </TabItem>
+
+        <!-- Вкладка 2: Анимация прыгающего мяча -->
+        <TabItem Header="Упр.2: Анимация">
+            <local:AnimationControl />
+        </TabItem>
+
+        <!-- Вкладка 3: Столбчатая диаграмма -->
+        <TabItem Header="Упр.3: Диаграмма">
+            <local:ChartControl />
+        </TabItem>
+    </TabControl>
+</Window>
