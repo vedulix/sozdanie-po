@@ -105,7 +105,13 @@ public void OnPostDouble()
 }
 \end{lstlisting}
 
-% TODO: добавить скриншот работающего приложения WebAppCoreProduct
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.6\textwidth]{../../скрины/SCR-20260328-pyro.png}
+\caption{Страница Product с результатом расчёта скидки}
+\end{figure}
+
+При запуске приложения на странице \texttt{/Product} отображается форма с полями <<Название товара>> и <<Цена>>, кнопками <<Получить скидку>>, <<С учетом своей скидки>> и <<Двойная скидка>>. После отправки формы выводится результат расчёта.
 
 \section{Задание 2. RazorPagesMovie}
 
@@ -171,7 +177,13 @@ public async Task OnGetAsync()
 }
 \end{lstlisting}
 
-% TODO: добавить скриншот списка фильмов с поиском
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{../../скрины/SCR-20260328-pytt.png}
+\caption{Список фильмов с поиском и CRUD}
+\end{figure}
+
+На странице \texttt{/Movies} отображается таблица фильмов с полями Название, Дата выхода, Жанр, Цена, Рейтинг. Доступен выпадающий список для фильтрации по жанру и текстовое поле для поиска по названию. Для каждого фильма доступны ссылки Изменить, Детали, Удалить.
 
 \section{Заключение}
 

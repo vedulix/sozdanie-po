@@ -11,12 +11,14 @@ public class HomeController : Controller
     private readonly ILogger<HomeController> _logger;
     private readonly CreditContext db;
 
+    // Конструктор — DI (Dependency Injection) подаёт зависимости автоматически
     public HomeController(ILogger<HomeController> logger, CreditContext context)
     {
         _logger = logger;
         db = context;
     }
 
+    // return View() — ищет Views/Home/Index.cshtml. ViewBag передаёт данные в представление
     public IActionResult Index()
     {
         GiveCredits();
@@ -30,7 +32,7 @@ public class HomeController : Controller
     }
 
     [HttpGet]
-    [Authorize]
+    [Authorize] // без логина — редирект на страницу входа. Identity ограничивает доступ
     public ActionResult CreateBid()
     {
         GiveCredits();
@@ -49,6 +51,7 @@ public class HomeController : Controller
         return "Спасибо, " + newBid.Name + ", за выбор нашего банка. Ваша заявка будет рассмотрена в течении 10 дней.";
     }
 
+    // AJAX-метод — вызывается через fetch(), возвращает частичное представление (PartialView)
     public IActionResult BidSearch(string creditHead)
     {
         var bids = db.Bids.Where(b => b.CreditHead == creditHead).ToList();

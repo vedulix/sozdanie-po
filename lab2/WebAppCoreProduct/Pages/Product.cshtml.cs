@@ -8,11 +8,13 @@ namespace WebAppCoreProduct.Pages
         public Product Product { get; set; } = new();
         public string? MessageRezult { get; private set; }
 
+        // OnGet — вызывается при GET-запросе (загрузка страницы)
         public void OnGet()
         {
             MessageRezult = "Для товара можно определить скидку";
         }
 
+        // OnPost — вызывается при POST (отправка формы). Соглашение Razor Pages: On + HTTP-метод
         public void OnPost(string name, decimal? price)
         {
             Product = new Product();
@@ -28,7 +30,7 @@ namespace WebAppCoreProduct.Pages
             Product.Name = name;
         }
 
-        // Упражнение 5: специальный обработчик — своя скидка
+        // Именованный обработчик (asp-page-handler="Discont") — своя скидка
         public void OnPostDiscont(string name, decimal? price, double discont)
         {
             Product = new Product();

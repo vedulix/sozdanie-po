@@ -101,7 +101,13 @@ public class Credit
 
 Класс \texttt{SeedData} добавляет 5 тестовых кредитов при первом запуске. В \texttt{HomeController} выводится таблица кредитов и форма подачи заявки.
 
-% TODO: добавить скриншот главной страницы с таблицей кредитов
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{../../скрины/SCR-20260328-pyve.png}
+\caption{Главная страница с таблицей кредитов}
+\end{figure}
+
+На главной странице отображается таблица <<Программы кредитования>> с колонками: Тип кредита, Период, Максимальная сумма, Ставка. Внизу -- ссылка <<Подать заявку на получение кредита>>.
 
 \section{ЛР 6. Scaffold-контроллеры и аннотации}
 
@@ -123,7 +129,13 @@ public async Task<IActionResult> CreateBid(Bid bid)
 }
 \end{lstlisting}
 
-% TODO: добавить скриншот CRUD страницы кредитов
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{../../скрины/SCR-20260328-pyxa.png}
+\caption{Страница CreateBid с AJAX-поиском заявок}
+\end{figure}
+
+На странице \texttt{/Credits} (доступна только администратору) отображается список кредитов с возможностью создания, редактирования и удаления записей.
 
 \section{ЛР 7. AJAX и частичные представления}
 
@@ -153,7 +165,7 @@ document.getElementById("searchBtn")
 </script>
 \end{lstlisting}
 
-% TODO: добавить скриншот AJAX-поиска
+На странице \texttt{/Home/CreateBid} реализован поиск заявок: выбор типа кредита из выпадающего списка, кнопка <<Найти>>. Результат подгружается без перезагрузки страницы через AJAX.
 
 \section{ЛР 8. Авторизация и аутентификация}
 
@@ -177,7 +189,13 @@ public static async Task InitializeRoles(
 
 На метод \texttt{CreateBid} установлен атрибут \texttt{[Authorize]}, требующий авторизации для подачи заявки. CRUD-операции с кредитами и удаление заявок доступны только администраторам через \texttt{[Authorize(Roles = "admin")]}.
 
-% TODO: добавить скриншот страницы входа
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{../../скрины/SCR-20260328-pyyk.png}
+\caption{Страница входа Identity}
+\end{figure}
+
+Страница входа \texttt{/Identity/Account/Login} содержит форму с полями Email и Password, а также ссылки на регистрацию и восстановление пароля.
 
 \section{Заключение}
 

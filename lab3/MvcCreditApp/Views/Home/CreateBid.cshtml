@@ -47,6 +47,7 @@
 
 @section Scripts {
 <script>
+    // AJAX: fetch() отправляет запрос без перезагрузки страницы, результат вставляется в div
     document.getElementById('searchBtn').addEventListener('click', function() {
         var creditHead = document.getElementById('searchCredit').value;
         fetch('/Home/BidSearch?creditHead=' + encodeURIComponent(creditHead))

@@ -16,6 +16,7 @@ builder.Services.AddDbContext<CreditContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("CreditContext")
         ?? "Data Source=CreditContext.db"));
 
+// Identity — регистрация, логин, роли (admin/user)
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
     .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>();
@@ -27,8 +28,8 @@ var app = builder.Build();
 using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
-    SeedData.Initialize(services);
-    await SeedData.InitializeRoles(services);
+    SeedData.Initialize(services);       // заполняет БД начальными кредитами
+    await SeedData.InitializeRoles(services); // создаёт роли admin/user и аккаунт admin@credit.com
 }
 
 // Configure the HTTP request pipeline.
@@ -46,6 +47,7 @@ app.UseAuthorization();
 
 app.MapStaticAssets();
 
+// Routing MVC: шаблон {controller}/{action}/{id?}. Адрес /Home/CreateBid → HomeController.CreateBid()
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}")

@@ -18,6 +18,7 @@ app.UseRouting();
 
 app.UseAuthorization();
 
+// Routing: регистрирует все Razor Pages. Имя файла = адрес: /Product → Pages/Product.cshtml
 app.MapRazorPages();
 
 app.Run();

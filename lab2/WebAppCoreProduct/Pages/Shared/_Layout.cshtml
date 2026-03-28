@@ -10,11 +10,13 @@
         <div>
             <ul>
                 <li><a asp-page="/Index">Главная</a></li>
+                @* Tag Helper asp-page — серверный атрибут, генерирует href автоматически *@
                 <li><a asp-page="/Product">Продукт</a></li>
             </ul>
         </div>
+        @* Мастер-страница: RenderBody() вставляет содержимое конкретной страницы *@
         @RenderBody()
     </div>
-    <div>&copy; @DateTime.Now.Year.ToString() - Осипов Н.А.</div>
+    <div>&copy; @DateTime.Now.Year.ToString() - Луценко В.</div>
 </body>
 </html>
