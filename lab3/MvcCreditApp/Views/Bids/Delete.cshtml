@@ -1,0 +1,27 @@
+@model MvcCreditApp.Models.Bid
+
+@{
+    ViewData["Title"] = "Удалить заявку";
+}
+
+<h2>Удалить заявку</h2>
+
+<h3>Вы уверены, что хотите удалить эту заявку?</h3>
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Name)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.Name)</dd>
+
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.CreditHead)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.CreditHead)</dd>
+
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.bidDate)</dt>
+        <dd class="col-sm-10">@Model.bidDate.ToString("dd.MM.yyyy")</dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="BidId" />
+        <input type="submit" value="Удалить" class="btn btn-danger" /> |
+        <a asp-action="Index">К списку</a>
+    </form>
+</div>

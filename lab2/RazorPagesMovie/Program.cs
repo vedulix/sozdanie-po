@@ -1,0 +1,36 @@
+using Microsoft.EntityFrameworkCore;
+using RazorPagesMovie.Data;
+using RazorPagesMovie.Models;
+
+var builder = WebApplication.CreateBuilder(args);
+
+// Add services to the container.
+builder.Services.AddRazorPages();
+
+builder.Services.AddDbContext<RazorPagesMovieContext>(options =>
+    options.UseSqlite(builder.Configuration.GetConnectionString("RazorPagesMovieContext")
+        ?? "Data Source=RazorPagesMovie.db"));
+
+var app = builder.Build();
+
+// Seed the database
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    SeedData.Initialize(services);
+}
+
+// Configure the HTTP request pipeline.
+if (!app.Environment.IsDevelopment())
+{
+    app.UseExceptionHandler("/Error");
+}
+
+app.UseRouting();
+
+app.UseAuthorization();
+
+app.UseStaticFiles();
+app.MapRazorPages();
+
+app.Run();

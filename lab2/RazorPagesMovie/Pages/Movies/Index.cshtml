@@ -1,0 +1,52 @@
+@page
+@model RazorPagesMovie.Pages.Movies.IndexModel
+
+@{
+    ViewData["Title"] = "Фильмы";
+}
+
+<h1>Фильмы</h1>
+
+<form>
+    <p>
+        <select asp-for="MovieGenre" asp-items="Model.Genres">
+            <option value="">Все жанры</option>
+        </select>
+        Название: <input type="text" asp-for="SearchString" />
+        <input type="submit" value="Найти" class="btn btn-default" />
+    </p>
+</form>
+
+<p>
+    <a asp-page="Create">Добавить фильм</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Movie[0].Title)</th>
+            <th>@Html.DisplayNameFor(model => model.Movie[0].ReleaseDate)</th>
+            <th>@Html.DisplayNameFor(model => model.Movie[0].Genre)</th>
+            <th>@Html.DisplayNameFor(model => model.Movie[0].Price)</th>
+            <th>@Html.DisplayNameFor(model => model.Movie[0].Rating)</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Movie)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Title)</td>
+                <td>@Html.DisplayFor(modelItem => item.ReleaseDate)</td>
+                <td>@Html.DisplayFor(modelItem => item.Genre)</td>
+                <td>@Html.DisplayFor(modelItem => item.Price)</td>
+                <td>@Html.DisplayFor(modelItem => item.Rating)</td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.Id">Изменить</a> |
+                    <a asp-page="./Details" asp-route-id="@item.Id">Детали</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.Id">Удалить</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

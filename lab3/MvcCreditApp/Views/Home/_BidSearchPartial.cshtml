@@ -1,0 +1,8 @@
+@model IEnumerable<MvcCreditApp.Models.Bid>
+<table class="table">
+    <tr><th>Имя</th><th>Тип кредита</th><th>Дата</th></tr>
+    @foreach (var b in Model)
+    {
+        <tr><td>@b.Name</td><td>@b.CreditHead</td><td>@b.bidDate.ToString("dd.MM.yyyy")</td></tr>
+    }
+</table>

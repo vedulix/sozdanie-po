@@ -1,0 +1,24 @@
+@model MvcCreditApp.Models.Bid
+
+@{
+    ViewData["Title"] = "Подробности заявки";
+}
+
+<h2>Подробности заявки</h2>
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Name)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.Name)</dd>
+
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.CreditHead)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.CreditHead)</dd>
+
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.bidDate)</dt>
+        <dd class="col-sm-10">@Model.bidDate.ToString("dd.MM.yyyy")</dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.BidId">Изменить</a> |
+    <a asp-action="Index">К списку</a>
+</div>
