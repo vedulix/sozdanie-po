@@ -19,3 +19,6 @@ materials/Calc_Starter/obj/
 *.suo
 *.lock
 storage.ide*
+
+# OpenMemory - IDE/Assistant specific rules
+.cursor/rules/openmemory.mdc
